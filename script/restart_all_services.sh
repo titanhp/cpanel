@@ -12,6 +12,7 @@ done
 for j in "${services[@]}"
 do
     echo Start $j
-    /etc/init.d/$j restart
+    /etc/init.d/$j stop
+    /etc/init.d/$j start
     /etc/init.d/$j status
 done
