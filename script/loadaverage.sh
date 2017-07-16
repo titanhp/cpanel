@@ -5,6 +5,7 @@ while [ 1=1 ];do
 	echo $CPU_LOAD
 	if [ $CPU_LOAD -gt $CPU_THRESHOLD ] ; then
 		echo OverLoad
+		echo $(date) >> log_loadaverage.txt
 		kill -9 $(ps aux | grep -ie php | awk '{ print $2 }')
 	fi
     sleep 5
